@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A weather app powered by OpenWeatherApi"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="keywords" content="Weather, Global, place, image" />
+    <meta name="theme-color" content="#000000" />
+    <meta author="author" content="Ahanaf Abdullah" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
+    <link rel="stylesheet" href="./dist/css/styles.min.css" />
+    <link rel="shortcut icon" href="./asset/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Weatherage</title>
+  </head>
+  <body>
+    <div>
+      <main class="card">
+        <h1 class="offscreen">A weather app powered by OpenWeatherApi</h1>
+        <div class="cardBody">
+          <section class="search">
+            <h2 class="offscreen">Search Entry</h2>
+            <label class="offscreen" for="search"
+              >Enter a place to know weather</label
+            >
+            <input
+              class="searchBar"
+              type="text"
+              placeholder="Search"
+              role="search-box"
+              aria-label="search"
+            />
+            <button
+              class="searchIcon"
+              tabindex="0"
+              type="button"
+              role="button"
+              aria-label="button"
+            >
+              <i class="fas fa-search blue"></i>
+            </button>
+          </section>
+          <section class="card_text">
+            <h2 class="offscreen">Search Results</h2>
+            <h1 class="city"></h1>
+            <img class="icon" src="" alt="" />
+
+            <h2 class="temp"></h2>
+
+            <h3 class="sky"></h3>
+            <h3 class="humidity"></h3>
+            <h3 class="speed"></h3>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <p>
+          <span aria-hidden="true">&lt;&lt;</span> Powered by
+          <a
+            href="https://openweathermap.org/"
+            target="_blank"
+            title="openweathermap"
+            rel="noopener"
+            >openweathermap</a
+          >
+          <span aria-hidden="true">&gt;&gt;</span>
+        </p>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
+  </body>
+</html>
